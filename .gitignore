@@ -1,0 +1,5 @@
+.vscode/
+Migrations/
+*.backup
+bin/
+obj/
