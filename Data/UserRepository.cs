@@ -1,4 +1,5 @@
 
+using System.Linq;
 using dotnet_auth.Models;
 
 namespace dotnet_auth.Data
@@ -18,6 +19,16 @@ namespace dotnet_auth.Data
             user.Id = _context.SaveChanges();
 
             return user;
+        }
+
+        public User GetByEmail(string email)
+        {
+            return _context.Users.FirstOrDefault(u => u.Email == email);
+        }
+
+        public User GetById(int id)
+        {
+            return _context.Users.FirstOrDefault(u => u.Id == id);
         }
     }
 }
